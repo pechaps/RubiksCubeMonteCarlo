@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "rubikscubemontecarlo"
+version = "0.1.0"
+description = "Infer by the use of monte-carlo simulation the number of try before returning to the initial state of a 2x2 rubiks cube"
+authors = ["pechaps <chapuypaul@gmail.com>", "mchaps"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.0.2"
+numpy = "^1.25.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

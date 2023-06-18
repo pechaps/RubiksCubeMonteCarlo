@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     print(f"Computation time : {finish_time - start_time}s")
 
-    output_dir = "outputs"
+    output_dir = "../outputs"
     os.makedirs(output_dir, exist_ok=True)
     results_df = pd.DataFrame({"#Movement": results})
     results_df.to_csv(f"{output_dir}/results_{N}.csv")
