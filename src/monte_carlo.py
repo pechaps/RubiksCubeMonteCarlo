@@ -33,6 +33,7 @@ def random_solve(random_seed: int) -> int:
         random_move = np.random.choice(rubik_movement)
         random_move(rubik)
         number_of_mvt += 1
+
     return number_of_mvt
 
 

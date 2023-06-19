@@ -1,3 +1,4 @@
+from typing import List
 
 
 class RubiksCube:
@@ -7,7 +8,7 @@ class RubiksCube:
     Method performs the possible movement on the initial state.
     """
     def __init__(self):
-        self.state = [
+        self.state: List[List[List[str]]] = [
             [["g", "g"], ["g", "g"]],
             [["r", "r"], ["r", "r"]],
             [["b", "b"], ["b", "b"]],
@@ -16,7 +17,7 @@ class RubiksCube:
             [["y", "y"], ["y", "y"]],
         ]
 
-    def move_right(self):
+    def move_right(self) -> None:
         (
             self.state[0][0][1],
             self.state[0][1][1],
@@ -45,11 +46,11 @@ class RubiksCube:
             self.state[1][0][0],
         )
 
-    def move_right_inverse(self):
+    def move_right_inverse(self) -> None:
         for _ in range(3):
             self.move_right()
 
-    def move_up(self):
+    def move_up(self) -> None:
         (
             self.state[0][0][0],
             self.state[0][0][1],
@@ -78,12 +79,11 @@ class RubiksCube:
             self.state[4][0][0],
         )
 
-    def move_up_inverse(self):
+    def move_up_inverse(self) -> None:
         for _ in range(3):
             self.move_up()
 
-
-    def move_front(self):
+    def move_front(self) -> None:
         (
             self.state[1][0][0],
             self.state[1][1][0],
@@ -112,14 +112,13 @@ class RubiksCube:
             self.state[0][0][0],
         )
 
-    def move_front_inverse(self):
+    def move_front_inverse(self) -> None:
         for _ in range(3):
             self.move_front()
 
     @staticmethod
-    def is_cube_resolved(state: list) -> bool:
+    def is_cube_resolved(state: List[List[List[str]]]) -> bool:
         for face in state:
             if (face[0] != face[1]) | (face[0][0] != face[0][1]) | (face[1][0] != face[1][1]) :
                 return False
         return True
-
